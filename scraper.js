@@ -7,6 +7,11 @@
 //   2. ENRICH — Call the AI enrichment endpoint to fill in
 //      VHF, berths, LOA, draft, contacts for incomplete marinas
 // ============================================================
+=== Environment Check ===
+ENRICH_API_URL: SET (https://reyus-intel.vercel.app/api/en...)
+SUPABASE_URL: SET (https://xxxxx.supabase.co...) or MISSING
+SUPABASE_SERVICE_KEY: SET (length: 234) or MISSING
+=========================
 
 const ENRICH_URL = process.env.ENRICH_API_URL || "https://YOUR-VERCEL-SITE.vercel.app/api/enrich-marina";
 const SB_URL = process.env.SUPABASE_URL || "";
