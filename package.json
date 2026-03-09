@@ -1,0 +1,7 @@
+{
+  "name": "reyus-marina-scraper",
+  "type": "module",
+  "scripts": {
+    "start": "node scraper.js"
+  }
+}
