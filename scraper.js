@@ -7,16 +7,19 @@
 //   2. ENRICH — Call the AI enrichment endpoint to fill in
 //      VHF, berths, LOA, draft, contacts for incomplete marinas
 // ============================================================
-=== Environment Check ===
-ENRICH_API_URL: SET (https://reyus-intel.vercel.app/api/en...)
-SUPABASE_URL: SET (https://xxxxx.supabase.co...) or MISSING
-SUPABASE_SERVICE_KEY: SET (length: 234) or MISSING
-=========================
 
 const ENRICH_URL = process.env.ENRICH_API_URL || "https://YOUR-VERCEL-SITE.vercel.app/api/enrich-marina";
 const SB_URL = process.env.SUPABASE_URL || "";
 const SB_KEY = process.env.SUPABASE_SERVICE_KEY || "";
 const MARINAS_PER_RUN = parseInt(process.env.MARINAS_PER_RUN || "10");
+
+// ── DIAGNOSTIC: Log which variables are set ──
+console.log("=== Environment Check ===");
+console.log("ENRICH_API_URL:", ENRICH_URL ? "SET (" + ENRICH_URL.substring(0, 40) + "...)" : "MISSING");
+console.log("SUPABASE_URL:", SB_URL ? "SET (" + SB_URL.substring(0, 40) + "...)" : "MISSING");
+console.log("SUPABASE_SERVICE_KEY:", SB_KEY ? "SET (length: " + SB_KEY.length + ")" : "MISSING");
+console.log("MARINAS_PER_RUN:", MARINAS_PER_RUN);
+console.log("=========================\n");
 
 const REGIONS = [
   { id: "west-med",        name: "Western Mediterranean",   south: 35, north: 45, west: -6,   east: 16 },
