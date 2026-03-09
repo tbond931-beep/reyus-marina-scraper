@@ -5,7 +5,7 @@
 // for marinas in the Supabase database.
 // ============================================================
 
-const API_URL = process.env.ENRICH_API_URL || "https://YOUR-VERCEL-SITE.vercel.app/api/enrich-marina";
+const API_URL = process.env.ENRICH_API_URL || "https://reyus-intel.vercel.app/api/enrich-marina";
 const MARINAS_PER_RUN = parseInt(process.env.MARINAS_PER_RUN || "5");
 
 async function run() {
